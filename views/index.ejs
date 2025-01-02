@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <%- include("./partials/head"); %>
+  </head>
+  <body class="p-0 m-0 h-[100vh] font-raleway flex flex-col justify-center items-center">
+    <div class="py-4 px-8 border-2 border-sky-600 rounded-md text-center flex flex-col gap-4 items-center jutify-center">
+      <img src="/assets/logo.png" alt="EventCal - Event Management Software" class="rounded-full w-36" />
+      <h1 class="text-2xl font-bold">EventCal</h1>
+      <p class="italic font-light">Your event booking partner</p>
+      <p>Get updates on the latest events near you<br /> and create events to share with our network.</p>
+      <div class="flex items-center justify-between w-full">
+        <button class="py-2 px-4 rounded-md border-2 border-sky-600 text-sky-600 font-bold hover:bg-sky-600 hover:text-white transition-all">
+          <a href="/signup" class="no-underline text-sky-600 hover:text-white">Sign Up</a>
+        </button>
+        <button class="py-2 px-4 rounded-md bg-sky-700 text-white hover:bg-sky-500 transition-all">
+          <a href="/login" class="no-underline text-white">Login</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
