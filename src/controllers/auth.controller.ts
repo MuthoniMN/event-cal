@@ -24,7 +24,7 @@ export default class AuthController {
     return responseInterceptor(201, "Successfully created a new user!", { user });
 
     } catch(e) {
-      console.log(`Error: ${e.message}`)
+      console.log(`Error: ${(e as Error).message}`)
       return responseInterceptor(500, "Failed to create user", {})
     }
   }
@@ -40,7 +40,7 @@ export default class AuthController {
 
     if(!passwordMatch) return responseInterceptor(400, "Invalid credentials!", {});
 
-    const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET_KEY);
+    const token = jwt.sign({ userId: user.id, role: user.role }, (process.env.JWT_SECRET_KEY as string));
 
     return responseInterceptor(200, "User successfully logged in!", { user, token }) 
   }
