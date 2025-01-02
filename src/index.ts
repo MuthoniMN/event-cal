@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { config } from "dotenv";
+import AppDataSource from "./config/db";
 
 config();
 const app = express();
@@ -22,4 +23,14 @@ app.get("/login", (req: Request, res: Response) => {
 })
 
 
-app.listen(port, () => console.log(`Server is running on port: ${port}`))
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`)
+
+  AppDataSource.initialize()
+    .then(() => {
+      console.log("Data Source has been initialized!")
+    })
+    .catch((err) => {
+      console.error("Initialization Error: ", err)
+    })
+})
