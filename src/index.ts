@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { config } from "dotenv";
 import AppDataSource from "./config/db";
+import authRouter from "./routes/auth.router";
 
 config();
 const app = express();
@@ -10,6 +11,11 @@ app.set('view engine', 'ejs');
 app.use(express.json())
 app.use(express.static("public"))
 
+// endpoints
+app.use("/auth", authRouter);
+
+
+// frontend views
 app.get("/", (req: Request, res: Response) => {
   res.render("index");
 })
