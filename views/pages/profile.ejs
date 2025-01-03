@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <%- include("../partials/head"); %>
+  </head>
+
+  <body class="p-0 m-0 h-[100vh] flex flex-col justify-center items-center">
+    <div class="max-w-md flex flex-col gap-4 items-center py-2 px-4 border-2 border-sky-600 rounded-md">
+      <h1><%= user.firstName %>'s Profile</h1>
+      <p><span class="font-bold">First Name: </span> <%= user.firstName %></p>
+      <p><span class="font-bold">Last Name: </span> <%= user.lastName %></p>
+      <p><span class="font-bold">Username: </span> <%= user.username %></p>
+      <p><span class="font-bold">Email: </span> <%= user.email %></p>
+      <p><span class="font-bold">Phone Number: </span> <%= user.phoneNumber %></p>
+    </div>
+  </body>
+</html>

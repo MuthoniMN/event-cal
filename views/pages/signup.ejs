@@ -3,11 +3,12 @@
 <html>
   <head>
     <%- include("../partials/head"); %>
+    <script src="/js/auth.js" defer></script>
   </head>
   <body class="p-0 m-0 h-[100vh] flex flex-col justify-center items-center">
     <section class="py-4 px-8 max-w-md border-2 border-sky-600 rounded-md flex flex-col gap-4 items-center justify-center">
       <h1 class="text-2xl font-bold">EventCal - Sign Up</h1>
-      <form action="/auth/signup" method="POST" class="flex flex-col items-center gap-4">
+      <form id="registerForm" class="flex flex-col items-center gap-4">
         <div class="w-full flex gap-2 items-center">
           <label for="firstName">First Name: </label>
           <input name="firstName" id="firstName" type="text" class="basis-auto border-0 border-b-2 border-sky-500" placeholder="John" />
@@ -38,5 +39,4 @@
       <a href="login" class="underline text-sky-800 hover:font-bold transition-all">Login instead</a>
     </section>
   </body>
-
 </html>
